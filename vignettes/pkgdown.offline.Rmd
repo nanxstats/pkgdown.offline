@@ -1,0 +1,28 @@
+---
+title: "pkgdown.offline"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{pkgdown.offline}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+To test the workflow:
+
+```r
+usethis::create_package("xyz")
+usethis::use_pkgdown()
+```
+
+Turn off internet connection, in the new project, run:
+
+```r
+pkgdown.offline::init_site()
+```
