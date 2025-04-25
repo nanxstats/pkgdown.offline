@@ -2,4 +2,5 @@
 
 export(clear_cache)
 export(init_site)
+export(path_pkg_cache)
 export(update_cache)

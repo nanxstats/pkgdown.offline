@@ -4,6 +4,8 @@ clear_cache <- function() {
 }
 
 #' Path to cache directory in pkgdown.offline
+#'
+#' @export
 path_pkg_cache <- function() {
   file.path("inst", "cache")
 }
