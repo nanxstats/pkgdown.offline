@@ -2,3 +2,4 @@
 
 export(clear_cache)
 export(init_site)
+export(update_cache)

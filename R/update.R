@@ -1,15 +1,22 @@
-#' Cache pkgdown dependencies into pkgdown.offline
+#' Cache pkgdown dependencies
 #'
-#' Cache pkgdown dependencies into pkgdown.offline for each pkgdown version
+#' Cache pkgdown dependencies for each pkgdown version
 #' (>= 2.1.0) on CRAN. Running This requires internet connection.
 #'
-#' @param version pkgdown version
+#' @param version pkgdown version.
+#' @param destdir Where to put the cached dependencies.
+#'
+#' @note
+#' To update the cache in pkgdown.offline,
+#' run `update_cache(..., destdir = path_pkg_cache())`.
+#'
+#' @export
 #'
 #' @examples
 #' update_cache("2.1.0")
 #' update_cache("2.1.1")
 #' update_cache("2.1.2")
-update_cache <- function(version) {
+update_cache <- function(version, destdir = tempdir()) {
   if (version %in% c("2.1.0", "2.1.1")) {
     remotes::install_version("pkgdown", version)
     pkgdown.offline::clear_cache()
@@ -22,7 +29,7 @@ update_cache <- function(version) {
     pkg$meta$template$`math-rendering` <- "katex"
     pkgdown:::external_dependencies(pkg)
 
-    copy_from_cache(version)
+    copy_from_cache(version, destdir)
   }
 
   if (version %in% c("2.1.2")) {
@@ -32,14 +39,6 @@ update_cache <- function(version) {
     pkg <- list()
     pkgdown:::external_dependencies(pkg)
 
-    copy_from_cache(version)
+    copy_from_cache(version, destdir)
   }
-}
-
-#' Copy deps from cache into pkgdown.offline
-copy_from_cache <- function(version) {
-  source_cache_dir <- tools::R_user_dir("pkgdown", which = "cache")
-  target_cache_dir <- file.path("inst/cache/", version)
-  fs::dir_copy(source_cache_dir, target_cache_dir, overwrite = TRUE)
-  invisible(NULL)
 }
