@@ -1,6 +1,7 @@
 #' @export
 clear_cache <- function() {
-  fs::dir_delete(tools::R_user_dir("pkgdown", which = "cache"))
+  path <- tools::R_user_dir("pkgdown", which = "cache")
+  if (fs::dir_exists(path)) fs::dir_delete(path)
 }
 
 #' Path to cache directory in pkgdown.offline
