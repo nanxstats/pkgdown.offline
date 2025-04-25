@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 To test the workflow:
 
 ```r
+pkgdown.offline::clear_cache()
 usethis::create_package("xyz")
 usethis::use_pkgdown()
 ```
@@ -25,4 +26,5 @@ Turn off internet connection, in the new project, run:
 
 ```r
 pkgdown.offline::init_site()
+pkgdown::build_site()
 ```
