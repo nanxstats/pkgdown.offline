@@ -19,12 +19,12 @@ To test the workflow:
 ```r
 pkgdown.offline::clear_cache()
 usethis::create_package("xyz")
-usethis::use_pkgdown()
 ```
 
 Turn off internet connection, in the new project, run:
 
 ```r
+usethis::use_pkgdown()
 pkgdown.offline::init_site()
-pkgdown::build_site()
+pkgdown.offline::build_site()
 ```
