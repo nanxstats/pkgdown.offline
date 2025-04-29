@@ -17,10 +17,10 @@
 #' update_cache("2.1.1")
 #' update_cache("2.1.2")
 update_cache <- function(version, destdir = tempdir()) {
-  if (version %in% c("2.1.0", "2.1.1")) {
-    remotes::install_version("pkgdown", version)
-    pkgdown.offline::clear_cache()
+  remotes::install_version("pkgdown", version)
+  pkgdown.offline::clear_cache()
 
+  if (version %in% c("2.1.0", "2.1.1")) {
     # Object stubbing for pkgdown::as_pkgdown()
     pkg <- list()
     pkg$meta$template$`math-rendering` <- "mathjax"
@@ -28,17 +28,12 @@ update_cache <- function(version, destdir = tempdir()) {
 
     pkg$meta$template$`math-rendering` <- "katex"
     pkgdown:::external_dependencies(pkg)
-
-    copy_from_cache(version, destdir)
   }
 
   if (version %in% c("2.1.2")) {
-    remotes::install_github("r-lib/pkgdown@f362d53", upgrade = FALSE)
-
-    pkgdown.offline::clear_cache()
     pkg <- list()
     pkgdown:::external_dependencies(pkg)
-
-    copy_from_cache(version, destdir)
   }
+
+  copy_from_cache(version, destdir)
 }
