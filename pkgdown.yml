@@ -3,7 +3,7 @@ pkgdown: 2.1.2
 pkgdown_sha: ~
 articles:
   pkgdown.offline: pkgdown.offline.html
-last_built: 2025-04-30T02:13Z
+last_built: 2025-04-30T05:53Z
 urls:
   reference: https://nanx.me/pkgdown.offline/reference
   article: https://nanx.me/pkgdown.offline/articles
