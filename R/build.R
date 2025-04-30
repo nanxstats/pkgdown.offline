@@ -1,3 +1,9 @@
+#' Build a complete pkgdown website offline
+#'
+#' @param ... TBA
+#'
+#' @importFrom utils packageVersion
+#'
 #' @export
 build_site <- function(...) {
   version <- packageVersion("pkgdown")
@@ -15,6 +21,9 @@ build_site <- function(...) {
   pkgdown::build_site(...)
 }
 
+#' @importFrom utils assignInNamespace getFromNamespace
+#'
+#' @noRd
 return_null <- function(f) {
   func <- getFromNamespace(f, ns = "pkgdown")
   code <- deparse(body(func))

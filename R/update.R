@@ -8,14 +8,10 @@
 #'
 #' @note
 #' To update the cache in pkgdown.offline,
-#' run `update_cache(..., destdir = path_pkg_cache())`.
+#' run `update_cache("2.1.0", destdir = path_pkg_cache())` with the version(s)
+#' you target.
 #'
-#' @export
-#'
-#' @examples
-#' update_cache("2.1.0")
-#' update_cache("2.1.1")
-#' update_cache("2.1.2")
+#' @noRd
 update_cache <- function(version, destdir = tempdir()) {
   remotes::install_version("pkgdown", version)
   pkgdown.offline::clear_cache()
