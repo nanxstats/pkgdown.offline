@@ -33,3 +33,8 @@ update_cache <- function(version, destdir = tempdir()) {
 
   copy_from_cache(version, destdir)
 }
+
+# TODO: De-duplicate files to minimize bundled assets when finalizing.
+# One function to create a map + the minimal set of files to save in package,
+# One function to restore the original directory structure to a
+# temporary directory using the package files + map at runtime.
