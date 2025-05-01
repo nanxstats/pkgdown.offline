@@ -43,6 +43,8 @@ update_cache <- function(version, destdir = tempdir()) {
 #'
 #' @return Invisibly returns the path to the created map file.
 #'
+#' @importFrom utils write.table
+#'
 #' @noRd
 minify_cache <- function(raw_cache_dir) {
   minimal_dir <- path_cache_dev()
@@ -101,6 +103,8 @@ minify_cache <- function(raw_cache_dir) {
 #' @param target_dir Directory to restore the cache to.
 #'
 #' @return Invisibly returns the path to the restored cache directory.
+#'
+#' @importFrom utils read.table
 #'
 #' @noRd
 restore_cache <- function(version, target_dir) {

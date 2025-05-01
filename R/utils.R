@@ -39,6 +39,7 @@ copy_to_cache <- function(version) {
   invisible(NULL)
 }
 
+#' @importFrom utils available.packages install.packages
 install_pkgdown <- function(version) {
   current_version <- available.packages(repos = "https://cran.r-project.org/")["pkgdown", "Version"]
   url <- if (version == current_version) {
