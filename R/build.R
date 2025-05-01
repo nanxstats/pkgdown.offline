@@ -23,7 +23,7 @@ build_site <- function(...) {
   }
 }
 
-#' @importFrom utils assignInNamespace getFromNamespace
+#' @importFrom utils getFromNamespace
 #'
 #' @noRd
 return_null <- function(f) {
@@ -31,5 +31,13 @@ return_null <- function(f) {
   code <- deparse(body(func))
   code <- "{ NULL }"
   body(func) <- parse(text = code)
-  assignInNamespace(f, func, ns = "pkgdown")
+  safe_assign(f, func, ns = "pkgdown")
+}
+
+#' @importFrom utils getFromNamespace
+#'
+#' @noRd
+safe_assign <- function(name, value, ns) {
+  f <- getFromNamespace("assignInNamespace", ns = "utils")
+  f(name, value, ns)
 }
