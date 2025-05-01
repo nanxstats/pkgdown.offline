@@ -39,23 +39,23 @@ update_cache <- function(version, destdir = tempdir()) {
 #' Scans all files in the cache directory, identifies duplicates by MD5
 #' checksum, and creates a minimal set of unique files along with a map.
 #'
-#' @param cache_dir Directory containing the version-specific cache directories.
+#' @param raw_cache_dir Directory containing the version-specific raw pkgdown cache directories.
 #'
 #' @return Invisibly returns the path to the created map file.
 #'
 #' @noRd
-minimize_cache <- function(cache_dir) {
+minify_cache <- function(raw_cache_dir) {
   minimal_dir <- path_cache_dev()
   if (!dir.exists(minimal_dir)) dir.create(minimal_dir, recursive = TRUE)
 
   # Calculate checksum for all cached files
-  all_files <- list.files(cache_dir, recursive = TRUE, full.names = TRUE)
+  all_files <- list.files(raw_cache_dir, recursive = TRUE, full.names = TRUE)
   md5_hashes <- tools::md5sum(all_files)
 
   # Create a data frame with file info
   file_info <- data.frame(
     original_path = all_files,
-    relative_path = gsub(paste0("^", gsub("([.|()\\^{}+$*?])", "\\\\\\1", cache_dir), "/"), "", all_files),
+    relative_path = gsub(paste0("^", gsub("([.|()\\^{}+$*?])", "\\\\\\1", raw_cache_dir), "/"), "", all_files),
     hash = md5_hashes,
     stringsAsFactors = FALSE
   )
@@ -87,14 +87,14 @@ minimize_cache <- function(cache_dir) {
   )
   write.table(map_data, file = map_file, quote = FALSE, row.names = FALSE, col.names = FALSE, sep = " ")
 
-  message("Cache minimized: ", length(all_files), " files reduced to ", length(unique_hashes), " unique files.\n")
+  message("Cache minified: ", length(all_files), " files reduced to ", length(unique_hashes), " unique files.\n")
 
   invisible(map_file)
 }
 
 #' Restore original cache structure from minimal cache
 #'
-#' This function uses the map created by `minimize_cache()` to restore the
+#' Use the map created by `minify_cache()` to restore the
 #' original cache directory structure to a temporary directory.
 #'
 #' @param version pkgdown version cache to restore.

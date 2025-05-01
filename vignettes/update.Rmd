@@ -20,8 +20,8 @@ Every time a new pkgdown version released on CRAN, the new version support
 needs to be added. pkgdown.offline also optimizes its package size by
 deduplicating these cache files.
 
-1. Open the package in development mode. Update the cache for all
-   supported pkgdown versions. For example:
+1. Open the package in development mode. Retrieve the raw pkgdown external
+   dependencies cache for all supported pkgdown versions. For example:
 
 ```r
 path_cache <- file.path(tempdir(), "pkgdown.offline")
@@ -30,13 +30,14 @@ pkgdown.offline:::update_cache("2.1.1", destdir = path_cache)
 pkgdown.offline:::update_cache("2.1.2", destdir = path_cache)
 ```
 
-2. Run the minimization function to create a minimal cache in pkgdown.offline:
+1. Create a minified cache in pkgdown.offline:
 
 ```r
-pkgdown.offline:::minimize_cache(path_cache)
+pkgdown.offline:::minify_cache(path_cache)
 ```
 
-3. Now the package contains the minimized cache with deduplicated files in `inst/cache/`. Commit and push.
+1. Now the package contains the minified cache with deduplicated files in
+   `inst/cache/`. Commit and push.
 
 The `restore_cache()` function will be used automatically by `copy_to_cache()`
 at runtime when pkgdown.offline is used to initialize or build site.
