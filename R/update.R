@@ -13,8 +13,8 @@
 #'
 #' @noRd
 update_cache <- function(version, destdir = tempdir()) {
-  remotes::install_version("pkgdown", version = version, upgrade = FALSE)
-  pkgdown.offline::clear_cache()
+  install_pkgdown(version)
+  clear_cache()
 
   if (version %in% c("2.1.0", "2.1.1")) {
     # Object stubbing for pkgdown::as_pkgdown()
