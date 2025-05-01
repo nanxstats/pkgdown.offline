@@ -6,11 +6,18 @@ clear_cache <- function() {
   if (fs::dir_exists(path)) fs::dir_delete(path)
 }
 
-#' Path to cache directory in pkgdown.offline
+#' Path to cache directory in pkgdown.offline (source state)
 #'
 #' @export
-path_pkg_cache <- function() {
+path_cache_dev <- function() {
   file.path("inst", "cache")
+}
+
+#' Path to cache directory in pkgdown.offline (installed state)
+#'
+#' @export
+path_cache_installed <- function() {
+  system.file("cache", package = "pkgdown.offline")
 }
 
 #' Copy deps from cache to somewhere (for example, pkgdown.offline in dev mode)
@@ -23,12 +30,11 @@ copy_from_cache <- function(version, destdir) {
   invisible(NULL)
 }
 
-#' Copy deps from pkgdown.offline into cache
+#' Copy deps from pkgdown.offline into pkgdown cache
 #'
 #' @noRd
 copy_to_cache <- function(version) {
-  source_cache_dir <- system.file(file.path("cache", version), package = "pkgdown.offline")
   target_cache_dir <- tools::R_user_dir("pkgdown", which = "cache")
-  fs::dir_copy(source_cache_dir, target_cache_dir, overwrite = TRUE)
+  restore_cache(version, target_dir = target_cache_dir)
   invisible(NULL)
 }
