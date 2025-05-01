@@ -1,8 +1,8 @@
 ---
-title: "Update cache"
+title: "Update pkgdown.offline"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{pkgdown.offline}
+  %\VignetteIndexEntry{Update pkgdown.offline}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

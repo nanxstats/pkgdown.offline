@@ -1,8 +1,8 @@
 ---
-title: "pkgdown.offline"
+title: "Use pkgdown.offline"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{pkgdown.offline}
+  %\VignetteIndexEntry{Use pkgdown.offline}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
