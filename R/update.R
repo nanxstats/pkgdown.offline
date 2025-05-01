@@ -86,6 +86,7 @@ minify_cache <- function(raw_cache_dir) {
     relative_path = map$relative_path,
     stringsAsFactors = FALSE
   )
+  # TODO: Sort things consistently
   write.table(map_data, file = map_file, quote = FALSE, row.names = FALSE, col.names = FALSE, sep = " ")
 
   message("Cache minified: ", length(all_files), " files reduced to ", length(unique_hashes), " unique files.\n")

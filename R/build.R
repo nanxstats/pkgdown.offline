@@ -6,6 +6,7 @@
 #'
 #' @export
 build_site <- function(...) {
+  # TODO: support versions forward and backward
   version <- packageVersion("pkgdown")
 
   if (version %in% c("2.1.0", "2.1.1")) {
