@@ -6,29 +6,28 @@
 #' @param version pkgdown version.
 #' @param destdir Where to put the cached dependencies.
 #'
-#' @note
-#' To update the cache in pkgdown.offline,
-#' run `update_cache("2.1.0", destdir = path_pkg_cache())` with the version(s)
-#' you target.
+#' @importFrom utils getFromNamespace
 #'
 #' @noRd
 update_cache <- function(version, destdir = tempdir()) {
   install_pkgdown(version)
   clear_cache()
 
+  cache_deps <- getFromNamespace("external_dependencies", "pkgdown")
+
   if (version %in% c("2.1.0", "2.1.1")) {
     # Object stubbing for pkgdown::as_pkgdown()
     pkg <- list()
     pkg$meta$template$`math-rendering` <- "mathjax"
-    pkgdown:::external_dependencies(pkg)
+    cache_deps(pkg)
 
     pkg$meta$template$`math-rendering` <- "katex"
-    pkgdown:::external_dependencies(pkg)
+    cache_deps(pkg)
   }
 
   if (version %in% c("2.1.2")) {
     pkg <- list()
-    pkgdown:::external_dependencies(pkg)
+    cache_deps(pkg)
   }
 
   copy_from_cache(version, destdir)
