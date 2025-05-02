@@ -66,15 +66,17 @@
 
     
     
-<p>To test the workflow:</p>
+<p>To test the offline build workflow, first clear the pkgdown external
+frontend dependencies cache that might exist on your machine:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">pkgdown.offline</span><span class="fu">::</span><span class="fu"><a href="../reference/clear_cache.html">clear_cache</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>Create a new package:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">create_package</span><span class="op">(</span><span class="st">"xyz"</span><span class="op">)</span></span></code></pre></div>
 <p><strong>Turn off internet connection</strong>. In the new project,
 run:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">use_pkgdown</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">pkgdown.offline</span><span class="fu">::</span><span class="fu"><a href="../reference/clear_cache.html">clear_cache</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">pkgdown.offline</span><span class="fu">::</span><span class="fu"><a href="../reference/init_site.html">init_site</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu">pkgdown.offline</span><span class="fu">::</span><span class="fu"><a href="../reference/build_site.html">build_site</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
   </main>
 </div>
