@@ -14,12 +14,13 @@ build_site <- function(...) {
     pkgdown::build_site(...)
   }
   if (version %in% c("2.1.2")) {
+    # Monkey patch internet-dependent functions
     # <https://github.com/r-lib/pkgdown/pull/2869>
     return_null("cran_link")
     return_null("pkg_timeline")
-    # TODO: If build_site() is called directly without init_site(), need to patch
-    # build_site -> build_bslib -> external_dependencies -> cached_dependency
-    # to avoid files being downloaded
+
+    # Always initialize in case `build_site()` is called directly
+    pkgdown.offline::init_site()
     pkgdown::build_site(..., new_process = FALSE)
   }
 }
