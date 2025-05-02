@@ -49,3 +49,29 @@ install_pkgdown <- function(version) {
   }
   install.packages(url, repos = NULL)
 }
+
+#' Compare package versions
+#'
+#' @param version The version to check.
+#' @param target The target version to compare against.
+#' @param operator The comparison operator ("==", "<", "<=", ">", ">=").
+#'
+#' @return Logical result of the comparison
+#'
+#' @noRd
+compare_version <- function(
+    version,
+    operator = c("==", "<", "<=", ">", ">="),
+    target) {
+  operator <- match.arg(operator)
+  result <- utils::compareVersion(as.character(version), target)
+
+  switch(operator,
+    "==" = result == 0,
+    "<"  = result < 0,
+    "<=" = result <= 0,
+    ">"  = result > 0,
+    ">=" = result >= 0,
+    stop("Invalid operator: ", operator)
+  )
+}

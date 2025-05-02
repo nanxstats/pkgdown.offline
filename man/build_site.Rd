@@ -7,7 +7,7 @@
 build_site(...)
 }
 \arguments{
-\item{...}{TBA}
+\item{...}{Arguments passed to \code{\link[pkgdown:build_site]{pkgdown::build_site()}}.}
 }
 \description{
 Build a complete pkgdown website offline
