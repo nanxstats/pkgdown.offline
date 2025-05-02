@@ -4,9 +4,9 @@
 \name{pkgdown.offline-package}
 \alias{pkgdown.offline}
 \alias{pkgdown.offline-package}
-\title{pkgdown.offline: What the Package Does (One Line, Title Case)}
+\title{pkgdown.offline: Build 'pkgdown' Websites Offline}
 \description{
-What the package does (one paragraph).
+Build 'pkgdown' websites without an internet connection.
 }
 \seealso{
 Useful links:
@@ -18,7 +18,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com}
+\strong{Maintainer}: Nan Xiao \email{me@nanx.me} (\href{https://orcid.org/0000-0002-0250-5673}{ORCID})
+
+Authors:
+\itemize{
+  \item John Blischak (\href{https://orcid.org/0000-0003-2634-9879}{ORCID})
+}
 
 }
 \keyword{internal}

@@ -1,9 +1,13 @@
 Package: pkgdown.offline
-Title: What the Package Does (One Line, Title Case)
+Title: Build 'pkgdown' Websites Offline
 Version: 0.0.0.9000
-Authors@R:
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Authors@R: c(
+    person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-0250-5673")),
+    person("John", "Blischak", role = c("aut"),
+           comment = c(ORCID = "0000-0003-2634-9879"))
+    )
+Description: Build 'pkgdown' websites without an internet connection.
 License: MIT + file LICENSE
 URL: https://nanx.me/pkgdown.offline/, https://github.com/nanxstats/pkgdown.offline
 BugReports: https://github.com/nanxstats/pkgdown.offline/issues
