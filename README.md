@@ -23,3 +23,11 @@ This is a basic example which shows you how to solve a common problem:
 library(pkgdown.offline)
 # Basic example code
 ```
+
+## Contributing
+
+We welcome contributions to pkgdown.offline. Please read the
+[Contributing Guidelines](https://nanx.me/pkgdown.offline/CONTRIBUTING.html) first.
+
+All interactions within pkgdown.offline repositories and issue trackers
+should adhere to the [Contributor Code of Conduct](https://nanx.me/pkgdown.offline/CODE_OF_CONDUCT.html).
