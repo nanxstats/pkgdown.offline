@@ -14,7 +14,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-To test the workflow:
+To test the offline build workflow, first clear the pkgdown external
+frontend dependencies cache that might exist on your machine:
+
+```r
+pkgdown.offline::clear_cache()
+```
+
+Create a new package:
 
 ```r
 usethis::create_package("xyz")
@@ -24,7 +31,5 @@ usethis::create_package("xyz")
 
 ```r
 usethis::use_pkgdown()
-pkgdown.offline::clear_cache()
-pkgdown.offline::init_site()
 pkgdown.offline::build_site()
 ```
