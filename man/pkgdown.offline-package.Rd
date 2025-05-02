@@ -6,6 +6,8 @@
 \alias{pkgdown.offline-package}
 \title{pkgdown.offline: Build 'pkgdown' Websites Offline}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 Build 'pkgdown' websites without an internet connection.
 }
 \seealso{

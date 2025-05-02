@@ -1,4 +1,4 @@
-# pkgdown.offline
+# pkgdown.offline <img src="man/figures/logo.png" align="right" width="120" />
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/nanxstats/pkgdown.offline/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nanxstats/pkgdown.offline/actions/workflows/R-CMD-check.yaml)
