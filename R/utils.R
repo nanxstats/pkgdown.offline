@@ -41,11 +41,11 @@ copy_to_cache <- function(version) {
 
 #' @importFrom utils available.packages install.packages
 install_pkgdown <- function(version) {
-  current_version <- available.packages(repos = "https://cran.r-project.org/")["pkgdown", "Version"]
+  current_version <- available.packages(repos = "https://cloud.r-project.org/")["pkgdown", "Version"]
   url <- if (version == current_version) {
-    paste0("https://cran.r-project.org/src/contrib/pkgdown_", version, ".tar.gz")
+    paste0("https://cloud.r-project.org/src/contrib/pkgdown_", version, ".tar.gz")
   } else {
-    paste0("https://cran.r-project.org/src/contrib/Archive/pkgdown/pkgdown_", version, ".tar.gz")
+    paste0("https://cloud.r-project.org/src/contrib/Archive/pkgdown/pkgdown_", version, ".tar.gz")
   }
   install.packages(url, repos = NULL)
 }
