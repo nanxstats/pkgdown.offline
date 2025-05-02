@@ -68,11 +68,12 @@
     
 <p>To test the workflow:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">pkgdown.offline</span><span class="fu">::</span><span class="fu"><a href="../reference/clear_cache.html">clear_cache</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">create_package</span><span class="op">(</span><span class="st">"xyz"</span><span class="op">)</span></span></code></pre></div>
-<p>Turn off internet connection, in the new project, run:</p>
+<code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">create_package</span><span class="op">(</span><span class="st">"xyz"</span><span class="op">)</span></span></code></pre></div>
+<p><strong>Turn off internet connection</strong>. In the new project,
+run:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">use_pkgdown</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu">pkgdown.offline</span><span class="fu">::</span><span class="fu"><a href="../reference/clear_cache.html">clear_cache</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu">pkgdown.offline</span><span class="fu">::</span><span class="fu"><a href="../reference/init_site.html">init_site</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu">pkgdown.offline</span><span class="fu">::</span><span class="fu"><a href="../reference/build_site.html">build_site</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
   </main>
