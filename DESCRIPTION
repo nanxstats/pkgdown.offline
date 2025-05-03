@@ -2,18 +2,32 @@ Package: pkgdown.offline
 Title: Build 'pkgdown' Websites Offline
 Version: 0.0.0.9000
 Authors@R: c(
-    person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre"),
+    person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-0250-5673")),
     person("John", "Blischak", role = c("aut"),
-           comment = c(ORCID = "0000-0003-2634-9879"))
+           comment = c(ORCID = "0000-0003-2634-9879")),
+    person("Algolia, Inc. and other contributors", role = c("ctb", "cph"),
+           comment = "autocomplete.js library"),
+    person("Aidan", "Feldman", role = c("ctb", "cph"),
+           comment = "bootstrap-toc library"),
+    person("Zeno", "Rocha", role = c("ctb", "cph"),
+           comment = "clipboard.js library"),
+    person("Nick", "Williams", role = c("ctb", "cph"),
+           comment = "headroom.js library"),
+    person("Julian", "Kühnel", role = c("ctb", "cph"),
+           comment = "mark.js library"),
+    person("Kiro", "Risk", role = c("ctb", "cph"),
+           comment = "Fuse.js library"),
+    person("Khan Academy and other contributors", role = c("ctb", "cph"),
+           comment = "KaTeX library"),
+    person("The MathJax Consortium", role = c("ctb", "cph"),
+           comment = "MathJax library")
     )
 Description: Build 'pkgdown' websites without an internet connection.
 License: MIT + file LICENSE
 URL: https://nanx.me/pkgdown.offline/, https://github.com/nanxstats/pkgdown.offline
 BugReports: https://github.com/nanxstats/pkgdown.offline/issues
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
 Imports:
     fs,
     pkgdown
@@ -23,3 +37,5 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

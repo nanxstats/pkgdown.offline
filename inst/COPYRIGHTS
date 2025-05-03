@@ -1,0 +1,13 @@
+The inst/cache/ subdirectory includes the locally cached JavaScript and CSS
+dependencies required by different pkgdown versions.
+The original names of the files are mapped in inst/cache/MD5.
+The library names, copyright holders, and licenses are:
+
+- autocomplete.js: Algolia, Inc. and other contributors, MIT License
+- bootstrap-toc: Aidan Feldman, MIT License
+- clipboard.js: Zeno Rocha, MIT License
+- headroom.js: Nick Williams, MIT License
+- mark.js: Julian Kühnel, MIT License
+- Fuse.js: Kiro Risk, Apache License, Version 2.0
+- KaTeX: Khan Academy and other contributors, MIT License
+- MathJax: The MathJax Consortium, Apache License, Version 2.0
