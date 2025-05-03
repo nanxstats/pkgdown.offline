@@ -20,11 +20,23 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Nan Xiao \email{me@nanx.me} (\href{https://orcid.org/0000-0002-0250-5673}{ORCID})
+\strong{Maintainer}: Nan Xiao \email{me@nanx.me} (\href{https://orcid.org/0000-0002-0250-5673}{ORCID}) [copyright holder]
 
 Authors:
 \itemize{
   \item John Blischak (\href{https://orcid.org/0000-0003-2634-9879}{ORCID})
+}
+
+Other contributors:
+\itemize{
+  \item Algolia, Inc. and other contributors (autocomplete.js library) [contributor, copyright holder]
+  \item Aidan Feldman (bootstrap-toc library) [contributor, copyright holder]
+  \item Zeno Rocha (clipboard.js library) [contributor, copyright holder]
+  \item Nick Williams (headroom.js library) [contributor, copyright holder]
+  \item Julian Kühnel (mark.js library) [contributor, copyright holder]
+  \item Kiro Risk (Fuse.js library) [contributor, copyright holder]
+  \item Khan Academy and other contributors (KaTeX library) [contributor, copyright holder]
+  \item The MathJax Consortium (MathJax library) [contributor, copyright holder]
 }
 
 }
