@@ -47,7 +47,7 @@ update_cache <- function(version, destdir = tempdir()) {
 #' @noRd
 minify_cache <- function(raw_cache_dir) {
   minimal_dir <- path_cache_dev()
-  if (!dir.exists(minimal_dir)) dir.create(minimal_dir, recursive = TRUE)
+  dir_create(minimal_dir)
 
   # Calculate checksum for all cached files
   all_files <- list.files(raw_cache_dir, recursive = TRUE, full.names = TRUE)
@@ -119,9 +119,9 @@ restore_cache <- function(version, target_dir) {
   version_prefix <- paste0("^", version, "/")
   version_files <- map[grepl(version_prefix, map$relative_path), ]
 
-  # Create target directory if it does not exist
-  if (dir.exists(target_dir)) unlink(target_dir, recursive = TRUE)
-  dir.create(target_dir, recursive = TRUE, showWarnings = FALSE)
+  # Create target directory
+  dir_delete(target_dir)
+  dir_create(target_dir)
 
   # Copy files to their original locations
   for (i in seq_len(nrow(version_files))) {
@@ -134,7 +134,7 @@ restore_cache <- function(version, target_dir) {
 
     # Create directory if needed
     target_dir_path <- dirname(target_file)
-    if (!dir.exists(target_dir_path)) dir.create(target_dir_path, recursive = TRUE, showWarnings = FALSE)
+    dir_create(target_dir_path)
 
     # Copy file
     file.copy(source_file, target_file, overwrite = TRUE)

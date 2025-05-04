@@ -29,7 +29,6 @@ URL: https://nanx.me/pkgdown.offline/, https://github.com/nanxstats/pkgdown.offl
 BugReports: https://github.com/nanxstats/pkgdown.offline/issues
 Encoding: UTF-8
 Imports:
-    fs,
     pkgdown
 Suggests:
     knitr,
