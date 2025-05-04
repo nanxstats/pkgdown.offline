@@ -3,7 +3,7 @@
 #' @export
 clear_cache <- function() {
   path <- tools::R_user_dir("pkgdown", which = "cache")
-  if (fs::dir_exists(path)) fs::dir_delete(path)
+  dir_delete(path)
 }
 
 #' Path to cache directory in pkgdown.offline (source state)
@@ -26,7 +26,7 @@ path_cache_installed <- function() {
 copy_from_cache <- function(version, destdir) {
   source_cache_dir <- tools::R_user_dir("pkgdown", which = "cache")
   target_cache_dir <- file.path(destdir, version)
-  fs::dir_copy(source_cache_dir, target_cache_dir, overwrite = TRUE)
+  dir_copy(source_cache_dir, target_cache_dir)
   invisible(NULL)
 }
 
