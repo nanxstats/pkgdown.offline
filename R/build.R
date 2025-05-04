@@ -65,37 +65,18 @@ build_site_offline_0 <- function(...) {
   pkgdown::build_site(...)
 }
 
-#' Build with monkey patching
+#' Offline build with monkey patching
 #'
 #' @param ... Arguments passed to [pkgdown::build_site()].
 #'
 #' @noRd
 build_site_offline_1 <- function(...) {
-  # Monkey patch internet-dependent functions
+  # Stub functions requiring internet
   # <https://github.com/r-lib/pkgdown/pull/2869>
-  return_null("cran_link")
-  return_null("pkg_timeline")
+  stub_with_null("pkgdown", "cran_link")
+  stub_with_null("pkgdown", "pkg_timeline")
 
   # Always initialize in case `build_site()` is called directly
   pkgdown.offline::init_site()
   pkgdown::build_site(..., new_process = FALSE)
-}
-
-#' @importFrom utils getFromNamespace
-#'
-#' @noRd
-return_null <- function(f) {
-  func <- getFromNamespace(f, ns = "pkgdown")
-  code <- deparse(body(func))
-  code <- "{ NULL }"
-  body(func) <- parse(text = code)
-  safe_assign(f, func, ns = "pkgdown")
-}
-
-#' @importFrom utils getFromNamespace
-#'
-#' @noRd
-safe_assign <- function(name, value, ns) {
-  f <- getFromNamespace("assignInNamespace", ns = "utils")
-  f(name, value, ns)
 }
