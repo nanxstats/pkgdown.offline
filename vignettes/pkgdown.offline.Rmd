@@ -20,11 +20,6 @@ initialization and site building functions for convenient drop-in replacements
 in your environment-constrained development or CI/CD workflows that
 cannot access the internet.
 
-**Disclaimer**: pkgdown.offline is an independent third-party solution **not**
-endorsed by, affiliated with, or supported by the authors of pkgdown.
-It is developed solely as a community contribution to address a specific
-use case and is **not** an official extension of the pkgdown project.
-
 ## Try it out locally
 
 To test the offline build workflow, first clear the pkgdown external

@@ -4,25 +4,35 @@
 [![R-CMD-check](https://github.com/nanxstats/pkgdown.offline/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nanxstats/pkgdown.offline/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of pkgdown.offline is to ...
+pkgdown.offline provides support for offline builds of pkgdown websites,
+especially for pkgdown versions >= 2.1.0.
+
+It works by bundling cached frontend dependencies from different pkgdown
+versions and implementing drop-in replacements for key functions.
+This allows you to build documentation websites in development workflows
+or CI/CD pipelines without internet access.
 
 ## Installation
 
 You can install the development version of pkgdown.offline from GitHub with:
 
 ``` r
-# install.packages("pak")
-pak::pak("nanxstats/pkgdown.offline")
+# install.packages("remotes")
+remotes::install_github("nanxstats/pkgdown.offline")
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+Use `pkgdown.offline::build_site()` and `pkgdown.offline::init_site()`
+to replace the original `pkgdown::build_site()` or `pkgdown::init_site()`
+calls in your original development or CI/CD workflow.
 
-``` r
-library(pkgdown.offline)
-# Basic example code
-```
+## Disclaimer
+
+pkgdown.offline is an independent third-party solution **not** endorsed by,
+affiliated with, or supported by the authors of pkgdown.
+It is developed solely as a community contribution to address a specific
+use case and is **not** an official extension of the pkgdown project.
 
 ## Contributing
 

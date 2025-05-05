@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 **This vignette is intended for pkgdown.offline developers only.**
 
-## The development workflow
+## How it works
 
 pkgdown.offline retrieves the cached frontend dependencies from each
 pkgdown version (>= 2.1.0) and bundle them in the package. The cache is
