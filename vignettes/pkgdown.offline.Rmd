@@ -35,7 +35,7 @@ Create a new package:
 usethis::create_package("xyz")
 ```
 
-**Turn off internet connection**. In the new project, run:
+**Switch off internet connection**. In the new project, run:
 
 ```r
 usethis::use_pkgdown()
