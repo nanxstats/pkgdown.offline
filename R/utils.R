@@ -24,11 +24,7 @@ clear_cache <- function() {
 #'
 #' @return Character string with the path to the cache directory.
 #'
-#' @export
-#'
-#' @examples
-#' # Get the path to the cache in development mode
-#' pkgdown.offline::path_cache_dev()
+#' @noRd
 path_cache_dev <- function() {
   file.path("inst", "cache")
 }
@@ -39,11 +35,7 @@ path_cache_dev <- function() {
 #'
 #' @return Character string with the path to the cache directory.
 #'
-#' @export
-#'
-#' @examples
-#' # Get the path to the cache in the installed package
-#' pkgdown.offline::path_cache_installed()
+#' @noRd
 path_cache_installed <- function() {
   system.file("cache", package = "pkgdown.offline")
 }
