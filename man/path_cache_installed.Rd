@@ -6,6 +6,13 @@
 \usage{
 path_cache_installed()
 }
+\value{
+Character string with the path to the cache directory.
+}
 \description{
-Path to cache directory in pkgdown.offline (installed state)
+Returns the path to the cache directory when the package is installed.
+}
+\examples{
+# Get the path to the cache in the installed package
+pkgdown.offline::path_cache_installed()
 }

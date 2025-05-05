@@ -6,6 +6,14 @@
 \usage{
 path_cache_dev()
 }
+\value{
+Character string with the path to the cache directory.
+}
 \description{
-Path to cache directory in pkgdown.offline (source state)
+Returns the path to the cache directory when the package is in
+development mode (not installed).
+}
+\examples{
+# Get the path to the cache in development mode
+pkgdown.offline::path_cache_dev()
 }

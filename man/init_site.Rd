@@ -7,8 +7,17 @@
 init_site(...)
 }
 \arguments{
-\item{...}{TBA}
+\item{...}{Arguments passed to \code{\link[pkgdown:init_site]{pkgdown::init_site()}}.}
+}
+\value{
+Invisible \code{NULL}, called for side effect of initializing site resources.
 }
 \description{
-Initialize site infrastructure offline
+Sets up the necessary infrastructure for building a pkgdown site offline
+by copying locally cached dependencies to the pkgdown cache directory.
+}
+\examples{
+\dontrun{
+pkgdown.offline::init_site()
+}
 }

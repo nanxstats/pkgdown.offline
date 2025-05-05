@@ -6,6 +6,8 @@
 #' @param version pkgdown version.
 #' @param destdir Where to put the cached dependencies.
 #'
+#' @return Invisible `NULL`, called for side effect of updating cache.
+#'
 #' @importFrom utils getFromNamespace
 #'
 #' @noRd
@@ -38,7 +40,8 @@ update_cache <- function(version, destdir = tempdir()) {
 #' Scans all files in the cache directory, identifies duplicates by MD5
 #' checksum, and creates a minimal set of unique files along with a map.
 #'
-#' @param raw_cache_dir Directory containing the version-specific raw pkgdown cache directories.
+#' @param raw_cache_dir Directory containing the version-specific
+#'   raw pkgdown cache directories.
 #'
 #' @return Invisibly returns the path to the created map file.
 #'
