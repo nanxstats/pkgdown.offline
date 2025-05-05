@@ -70,8 +70,16 @@
 
     
     
+<p>pkgdown.offline supports offline builds of pkgdown websites. It
+implements identically named functions to mask the original site
+initialization and site building functions for convenient drop-in
+replacements in your environment-constrained development or CI/CD
+workflows that cannot access the internet.</p>
+<div class="section level2">
+<h2 id="try-it-out-locally">Try it out locally<a class="anchor" aria-label="anchor" href="#try-it-out-locally"></a>
+</h2>
 <p>To test the offline build workflow, first clear the pkgdown external
-frontend dependencies cache that might exist on your machine:</p>
+frontend dependencies cache that might exist in your environment:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">pkgdown.offline</span><span class="fu">::</span><span class="fu"><a href="../reference/clear_cache.html">clear_cache</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Create a new package:</p>
@@ -82,7 +90,19 @@ run:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">usethis</span><span class="fu">::</span><span class="fu">use_pkgdown</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu">pkgdown.offline</span><span class="fu">::</span><span class="fu"><a href="../reference/build_site.html">build_site</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-  </main>
+</div>
+<div class="section level2">
+<h2 id="use-in-production-environments">Use in production environments<a class="anchor" aria-label="anchor" href="#use-in-production-environments"></a>
+</h2>
+<p>In practice, you can replace <code><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">pkgdown::build_site()</a></code> calls
+with <code><a href="../reference/build_site.html">pkgdown.offline::build_site()</a></code> in your wrapper function
+or CI/CD workflow to achieve offline builds. Similarly, you can use
+<code><a href="../reference/init_site.html">pkgdown.offline::init_site()</a></code> if a
+<code><a href="https://pkgdown.r-lib.org/reference/init_site.html" class="external-link">pkgdown::init_site()</a></code> step was involved in your
+workflow.</p>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 

@@ -38,9 +38,30 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.1.0" id="pkgdownoffline-010">pkgdown.offline 0.1.0<a class="anchor" aria-label="anchor" href="#pkgdownoffline-010"></a></h2>
-<ul><li>Initial CRAN submission.</li>
+<div class="section level3">
+<h3 id="new-features-0-1-0">New features<a class="anchor" aria-label="anchor" href="#new-features-0-1-0"></a></h3>
+<ul><li>Implements key functions that replace pkgdown counterparts:
+<ul><li>
+<code><a href="../reference/build_site.html">build_site()</a></code> - Builds complete pkgdown websites offline.</li>
+<li>
+<code><a href="../reference/init_site.html">init_site()</a></code> - Initializes site infrastructure offline.</li>
+</ul></li>
+<li>Implements <code><a href="../reference/clear_cache.html">clear_cache()</a></code> to remove cached pkgdown frontend dependencies.</li>
 </ul></div>
-  </main></div>
+<div class="section level3">
+<h3 id="pkgdown-version-support-0-1-0">pkgdown version support<a class="anchor" aria-label="anchor" href="#pkgdown-version-support-0-1-0"></a></h3>
+<ul><li>Supports pkgdown versions 2.1.0, 2.1.1, and 2.1.2 with version-specific implementations.</li>
+<li>Supports pkgdown versions &lt; 2.1.0 with conventional offline build method.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="tooling-0-1-0">Tooling<a class="anchor" aria-label="anchor" href="#tooling-0-1-0"></a></h3>
+<ul><li>Bundles optimized and deduplicated dependencies from supported pkgdown versions.</li>
+<li>Provides fallbacks for internet-dependent functions in pkgdown &gt;= 2.1.0.</li>
+<li>Includes utilities for developers to update dependencies for future pkgdown versions.</li>
+</ul></div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">

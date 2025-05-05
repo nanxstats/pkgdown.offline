@@ -70,12 +70,23 @@
 
     
     
-<p>pkgdown.offline needs to retrieve the cached frontend dependencies
-from each pkgdown version (&gt;= 2.1.0) and store them in the package.
-Every time a new pkgdown version is released on CRAN, the new version
-support should to be verified and potentially added by the developer.
-pkgdown.offline also optimizes its package size by deduplicating these
-cache files across different pkgdown versions.</p>
+<p><strong>This vignette is intended for pkgdown.offline developers
+only.</strong></p>
+<div class="section level2">
+<h2 id="how-it-works">How it works<a class="anchor" aria-label="anchor" href="#how-it-works"></a>
+</h2>
+<p>pkgdown.offline retrieves the cached frontend dependencies from each
+pkgdown version (&gt;= 2.1.0) and bundle them in the package. The cache
+is then used by the functions like
+<code><a href="../reference/init_site.html">pkgdown.offline::init_site()</a></code> and
+<code><a href="../reference/build_site.html">pkgdown.offline::build_site()</a></code> to support offline build
+workflows.</p>
+<p>Every time a new pkgdown version is released on CRAN, the new version
+support should to be verified and potentially added by the
+pkgdown.offline developer. pkgdown.offline also optimizes its package
+size by deduplicating these cache files across different pkgdown
+versions.</p>
+</div>
 <div class="section level2">
 <h2 id="retrieve-raw-pkgdown-external-dependencies">Retrieve raw pkgdown external dependencies<a class="anchor" aria-label="anchor" href="#retrieve-raw-pkgdown-external-dependencies"></a>
 </h2>
@@ -102,10 +113,10 @@ example:</p>
 in <code>inst/cache/</code>. Commit and push.</p>
 <p>Certain internet-skipping logic in
 <code><a href="../reference/build_site.html">pkgdown.offline::build_site()</a></code> and relevant functions might
-need adjustment.</p>
+need adjustments.</p>
 </div>
 <div class="section level2">
-<h2 id="when-the-cache-is-used">When the cache is used<a class="anchor" aria-label="anchor" href="#when-the-cache-is-used"></a>
+<h2 id="using-the-bundled-cache">Using the bundled cache<a class="anchor" aria-label="anchor" href="#using-the-bundled-cache"></a>
 </h2>
 <p>When <code><a href="../reference/init_site.html">pkgdown.offline::init_site()</a></code> or
 <code><a href="../reference/build_site.html">pkgdown.offline::build_site()</a></code> is called to initialize or
