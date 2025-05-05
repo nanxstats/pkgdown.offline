@@ -1,10 +1,23 @@
 #' Build a complete pkgdown website offline
 #'
+#' Builds a pkgdown website without requiring internet connection by using
+#' cached dependencies. Detects the installed pkgdown version and applies
+#' the appropriate offline build strategy.
+#'
 #' @param ... Arguments passed to [pkgdown::build_site()].
+#'
+#' @return Invisible `NULL`, called for side effect of building the website.
 #'
 #' @importFrom utils packageVersion
 #'
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' pkgdown.offline::build_site()
+#'
+#' pkgdown.offline::build_site(override = list(destination = tempdir()))
+#' }
 build_site <- function(...) {
   version <- packageVersion("pkgdown")
 
@@ -37,7 +50,11 @@ build_site <- function(...) {
 
 #' Determine pkgdown version category for dispatch
 #'
+#' Maps the installed pkgdown version to a category used for selecting
+#' the appropriate offline build strategy.
+#'
 #' @param version The pkgdown version.
+#'
 #' @return A string category used for dispatch.
 #'
 #' @noRd
@@ -57,7 +74,12 @@ get_version_category <- function(version) {
 
 #' Simple offline build
 #'
+#' Implements the offline build strategy for older pkgdown versions
+#' by setting the `pkgdown.internet` option to `FALSE`.
+#'
 #' @param ... Arguments passed to [pkgdown::build_site()].
+#'
+#' @return Invisible `NULL`, called for side effect of building the website.
 #'
 #' @noRd
 build_site_offline_0 <- function(...) {
@@ -67,7 +89,12 @@ build_site_offline_0 <- function(...) {
 
 #' Offline build with monkey patching
 #'
+#' Implements the offline build strategy for pkgdown v2.1.0 and later
+#' by stubbing functions that require internet access and using cached assets.
+#'
 #' @param ... Arguments passed to [pkgdown::build_site()].
+#'
+#' @return Invisible `NULL`, called for side effect of building the website.
 #'
 #' @noRd
 build_site_offline_1 <- function(...) {

@@ -9,6 +9,18 @@ build_site(...)
 \arguments{
 \item{...}{Arguments passed to \code{\link[pkgdown:build_site]{pkgdown::build_site()}}.}
 }
+\value{
+Invisible \code{NULL}, called for side effect of building the website.
+}
 \description{
-Build a complete pkgdown website offline
+Builds a pkgdown website without requiring internet connection by using
+cached dependencies. Detects the installed pkgdown version and applies
+the appropriate offline build strategy.
+}
+\examples{
+\dontrun{
+pkgdown.offline::build_site()
+
+pkgdown.offline::build_site(override = list(destination = tempdir()))
+}
 }

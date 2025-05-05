@@ -1,6 +1,10 @@
 #' Create directory
 #'
-#' @param path TBA
+#' Creates a directory if it does not already exist.
+#'
+#' @param path Path to the directory to create.
+#'
+#' @return `TRUE` if the directory exists or was successfully created.
 #'
 #' @noRd
 dir_create <- function(path) {
@@ -9,7 +13,13 @@ dir_create <- function(path) {
 
 #' Delete directories
 #'
-#' @param path TBA
+#' Recursively removes a directory and all its contents.
+#'
+#' @param path Path to the directory to delete.
+#'
+#' @return
+#' Invisible `NULL` if directory does not exist.
+#' Otherwise, invisible 0 for success, 1 for failure.
 #'
 #' @noRd
 dir_delete <- function(path) {
@@ -21,8 +31,14 @@ dir_delete <- function(path) {
 
 #' Copy directories
 #'
-#' @param from TBA
-#' @param to TBA
+#' Recursively copies a directory and all its contents to a new location.
+#' The destination directory will be deleted first if it exists.
+#'
+#' @param from Path to the source directory.
+#' @param to Path to the destination directory.
+#'
+#' @return
+#' Invisible logical vector indicating whether each file was successfully copied.
 #'
 #' @noRd
 dir_copy <- function(from, to) {

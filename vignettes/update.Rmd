@@ -14,12 +14,19 @@ knitr::opts_chunk$set(
 )
 ```
 
-pkgdown.offline needs to retrieve the cached frontend dependencies from
-each pkgdown version (>= 2.1.0) and store them in the package.
+**This vignette is intended for pkgdown.offline developers only.**
+
+## How it works
+
+pkgdown.offline retrieves the cached frontend dependencies from each
+pkgdown version (>= 2.1.0) and bundle them in the package. The cache is
+then used by the functions like `pkgdown.offline::init_site()` and
+`pkgdown.offline::build_site()` to support offline build workflows.
+
 Every time a new pkgdown version is released on CRAN, the new version support
-should to be verified and potentially added by the developer. pkgdown.offline
-also optimizes its package size by deduplicating these cache files across
-different pkgdown versions.
+should to be verified and potentially added by the pkgdown.offline developer.
+pkgdown.offline also optimizes its package size by deduplicating these cache
+files across different pkgdown versions.
 
 ## Retrieve raw pkgdown external dependencies
 
@@ -47,9 +54,9 @@ Now the package contains the minified cache with deduplicated files in
 `inst/cache/`. Commit and push.
 
 Certain internet-skipping logic in `pkgdown.offline::build_site()` and
-relevant functions might need adjustment.
+relevant functions might need adjustments.
 
-## When the cache is used
+## Using the bundled cache
 
 When `pkgdown.offline::init_site()` or `pkgdown.offline::build_site()`
 is called to initialize or build site offline, the `copy_to_cache()` function

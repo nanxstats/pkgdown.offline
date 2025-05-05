@@ -23,7 +23,11 @@ Authors@R: c(
     person("The MathJax Consortium", role = c("ctb", "cph"),
            comment = "MathJax library")
     )
-Description: Build 'pkgdown' websites without an internet connection.
+Description: Provides support for building 'pkgdown' websites without an
+    internet connection. Works by bundling cached frontend dependencies and
+    implementing drop-in replacements for key 'pkgdown' functions.
+    Enables package documentation websites to be built in environments
+    where internet access is unavailable or restricted.
 License: MIT + file LICENSE
 URL: https://nanx.me/pkgdown.offline/, https://github.com/nanxstats/pkgdown.offline
 BugReports: https://github.com/nanxstats/pkgdown.offline/issues

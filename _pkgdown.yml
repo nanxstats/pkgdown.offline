@@ -2,3 +2,12 @@ url: https://nanx.me/pkgdown.offline/
 
 template:
   bootstrap: 5
+
+reference:
+  - title: "Initialize and build site"
+    contents:
+      - build_site
+      - init_site
+  - title: "Utilities"
+    contents:
+      - clear_cache

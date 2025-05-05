@@ -3,8 +3,6 @@
 export(build_site)
 export(clear_cache)
 export(init_site)
-export(path_cache_dev)
-export(path_cache_installed)
 importFrom(utils,available.packages)
 importFrom(utils,getFromNamespace)
 importFrom(utils,install.packages)
