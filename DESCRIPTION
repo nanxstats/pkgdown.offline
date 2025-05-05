@@ -24,7 +24,7 @@ Authors@R: c(
            comment = "MathJax library")
     )
 Description: Provides support for building 'pkgdown' websites without an
-    internet connection. Works by bundling cached frontend dependencies and
+    internet connection. Works by bundling cached dependencies and
     implementing drop-in replacements for key 'pkgdown' functions.
     Enables package documentation websites to be built in environments
     where internet access is unavailable or restricted.
