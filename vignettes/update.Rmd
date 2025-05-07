@@ -24,7 +24,7 @@ then used by the functions like `pkgdown.offline::init_site()` and
 `pkgdown.offline::build_site()` to support offline build workflows.
 
 Every time a new pkgdown version is released on CRAN, the new version support
-should to be verified and potentially added by the pkgdown.offline developer.
+should be verified and potentially updated by the pkgdown.offline developer.
 pkgdown.offline also optimizes its package size by deduplicating these cache
 files across different pkgdown versions.
 
