@@ -16,7 +16,7 @@
 #' pkgdown.offline::init_site()
 #' }
 init_site <- function(...) {
-  version <- packageVersion("pkgdown")
-  copy_to_cache(version)
+  copy_to_cache(packageVersion("pkgdown"))
+  stub_with_null("pkgdown", "build_favicons")
   pkgdown::init_site(...)
 }
