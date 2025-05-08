@@ -9,3 +9,7 @@
 ^LICENSE\.md$
 ^CODE_OF_CONDUCT\.md$
 ^CONTRIBUTING\.md$
+
+^tools$
+^tests/manual$
+^vignettes/update\.Rmd$
