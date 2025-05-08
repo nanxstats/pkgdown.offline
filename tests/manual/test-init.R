@@ -1,7 +1,9 @@
 # Test if offline initialization works
 
+source("tools/tools.R")
+
 pkgdown_version <- available.packages(repos = "https://cloud.r-project.org/")["pkgdown", "Version"]
-pkgdown.offline:::install_pkgdown(pkgdown_version)
+install_pkgdown(pkgdown_version)
 
 pkg_path <- "zzz.init"
 usethis::create_package(pkg_path)

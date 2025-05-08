@@ -1,7 +1,9 @@
 # Test if offline build works
 
+source("tools/tools.R")
+
 pkgdown_version <- available.packages(repos = "https://cloud.r-project.org/")["pkgdown", "Version"]
-pkgdown.offline:::install_pkgdown(pkgdown_version)
+install_pkgdown(pkgdown_version)
 
 pkg_path <- "zzz.build"
 usethis::create_package(pkg_path)
