@@ -30,14 +30,20 @@ files across different pkgdown versions.
 
 ## Retrieve raw pkgdown external dependencies
 
-Open the package in development mode. Retrieve the raw pkgdown external
-dependencies cache for all supported pkgdown versions. For example:
+Clone the repository. Open the project. Source the developer maintenance script:
+
+```r
+source("tools/tools.R")
+```
+
+Retrieve the raw pkgdown external dependencies cache for all supported
+pkgdown versions. For example:
 
 ```r
 path_cache <- file.path(tempdir(), "pkgdown.offline")
-pkgdown.offline:::update_cache("2.1.0", destdir = path_cache)
-pkgdown.offline:::update_cache("2.1.1", destdir = path_cache)
-pkgdown.offline:::update_cache("2.1.2", destdir = path_cache)
+update_cache("2.1.0", destdir = path_cache)
+update_cache("2.1.1", destdir = path_cache)
+update_cache("2.1.2", destdir = path_cache)
 ```
 
 ## Create minified cache
@@ -45,7 +51,7 @@ pkgdown.offline:::update_cache("2.1.2", destdir = path_cache)
 Create a minified cache in pkgdown.offline:
 
 ```r
-pkgdown.offline:::minify_cache(path_cache)
+minify_cache(path_cache)
 ```
 
 ## Update offline build logic
@@ -62,3 +68,6 @@ When `pkgdown.offline::init_site()` or `pkgdown.offline::build_site()`
 is called to initialize or build site offline, the `copy_to_cache()` function
 will use `restore_cache()` to restore the cache into their original structure
 to the regular pkgdown cache location that individual pkgdown versions expect.
+
+You can run the manual tests under `tests/manual/` to verify if everything works.
+Note that the package should be in the installed state for `inst/cache/` to work.

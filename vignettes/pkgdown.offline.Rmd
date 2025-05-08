@@ -29,10 +29,10 @@ frontend dependencies cache that might exist in your environment:
 pkgdown.offline::clear_cache()
 ```
 
-Create a new package:
+Create a new package. For example:
 
 ```r
-usethis::create_package("xyz")
+usethis::create_package(file.path(tempdir(), "pkg"))
 ```
 
 **Switch off internet connection**. In the new project, run:

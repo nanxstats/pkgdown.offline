@@ -8,14 +8,12 @@
 #'
 #' @return Invisible `NULL`, called for side effect of updating cache.
 #'
-#' @importFrom utils getFromNamespace
-#'
 #' @noRd
 update_cache <- function(version, destdir = tempdir()) {
   install_pkgdown(version)
-  clear_cache()
+  pkgdown.offline::clear_cache()
 
-  cache_deps <- getFromNamespace("external_dependencies", "pkgdown")
+  cache_deps <- utils::getFromNamespace("external_dependencies", "pkgdown")
 
   if (version %in% c("2.1.0", "2.1.1")) {
     # Object stubbing for pkgdown::as_pkgdown()
@@ -35,6 +33,21 @@ update_cache <- function(version, destdir = tempdir()) {
   copy_from_cache(version, destdir)
 }
 
+#' Copy dependencies from pkgdown cache to a target directory
+#'
+#' @param version The pkgdown version to copy dependencies for.
+#' @param destdir Destination directory to copy the dependencies to.
+#'
+#' @return Invisible `NULL`, called for side effect of copying files.
+#'
+#' @noRd
+copy_from_cache <- function(version, destdir) {
+  source_cache_dir <- tools::R_user_dir("pkgdown", which = "cache")
+  target_cache_dir <- file.path(destdir, version)
+  pkgdown.offline:::dir_copy(source_cache_dir, target_cache_dir)
+  invisible()
+}
+
 #' Minify cache by deduplicating files and creating a map
 #'
 #' Scans all files in the cache directory, identifies duplicates by MD5
@@ -50,7 +63,7 @@ update_cache <- function(version, destdir = tempdir()) {
 #' @noRd
 minify_cache <- function(raw_cache_dir) {
   minimal_dir <- path_cache_dev()
-  dir_create(minimal_dir)
+  pkgdown.offline:::dir_create(minimal_dir)
 
   # Calculate checksum for all cached files
   all_files <- list.files(raw_cache_dir, recursive = TRUE, full.names = TRUE)
@@ -98,52 +111,33 @@ minify_cache <- function(raw_cache_dir) {
   invisible(map_file)
 }
 
-#' Restore original cache structure from minimal cache
+#' Path to cache directory in pkgdown.offline (source state)
 #'
-#' Use the map created by `minify_cache()` to restore the
-#' original cache directory structure to a temporary directory.
+#' Returns the path to the cache directory when the package is in
+#' development mode (not installed).
 #'
-#' @param version pkgdown version cache to restore.
-#' @param target_dir Directory to restore the cache to.
-#'
-#' @return Invisibly returns the path to the restored cache directory.
-#'
-#' @importFrom utils read.table
+#' @return Character string with the path to the cache directory.
 #'
 #' @noRd
-restore_cache <- function(version, target_dir) {
-  # Load the map from plain text file
-  minimal_dir <- path_cache_installed()
-  map_file <- file.path(minimal_dir, "MD5")
-  if (!file.exists(map_file)) stop("MD5 map file not found in cache directory.")
-  map <- read.table(map_file, header = FALSE, col.names = c("hash", "relative_path"), stringsAsFactors = FALSE)
+path_cache_dev <- function() {
+  file.path("inst", "cache")
+}
 
-  # Filter for files from the requested version
-  version_prefix <- paste0("^", version, "/")
-  version_files <- map[grepl(version_prefix, map$relative_path), ]
-
-  # Create target directory
-  dir_delete(target_dir)
-  dir_create(target_dir)
-
-  # Copy files to their original locations
-  for (i in seq_len(nrow(version_files))) {
-    # Source file in minimal cache
-    source_file <- file.path(minimal_dir, version_files$hash[i])
-
-    # Target file in temporary structure (without version prefix)
-    rel_path <- sub(version_prefix, "", version_files$relative_path[i])
-    target_file <- file.path(target_dir, rel_path)
-
-    # Create directory if needed
-    target_dir_path <- dirname(target_file)
-    dir_create(target_dir_path)
-
-    # Copy file
-    file.copy(source_file, target_file, overwrite = TRUE)
+#' Install a specific version of pkgdown
+#'
+#' @param version The version of pkgdown to install.
+#'
+#' @return Invisible `NULL`, called for side effect of installing pkgdown.
+#'
+#' @importFrom utils available.packages install.packages
+#'
+#' @noRd
+install_pkgdown <- function(version) {
+  current_version <- available.packages(repos = "https://cloud.r-project.org/")["pkgdown", "Version"]
+  url <- if (version == current_version) {
+    paste0("https://cloud.r-project.org/src/contrib/pkgdown_", version, ".tar.gz")
+  } else {
+    paste0("https://cloud.r-project.org/src/contrib/Archive/pkgdown/pkgdown_", version, ".tar.gz")
   }
-
-  message("Restored ", nrow(version_files), " files for pkgdown version ", version, ".\n")
-
-  invisible(target_dir)
+  install.packages(url, repos = NULL)
 }

@@ -13,7 +13,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' pkgdown.offline::init_site()
+#' pkgdown.offline::init_site(override = list(destination = tempdir()))
 #' }
 init_site <- function(...) {
   copy_to_cache(packageVersion("pkgdown"))
