@@ -19,8 +19,6 @@ the appropriate offline build strategy.
 }
 \examples{
 \dontrun{
-pkgdown.offline::build_site()
-
 pkgdown.offline::build_site(override = list(destination = tempdir()))
 }
 }

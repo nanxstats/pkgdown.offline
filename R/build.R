@@ -14,8 +14,6 @@
 #'
 #' @examples
 #' \dontrun{
-#' pkgdown.offline::build_site()
-#'
 #' pkgdown.offline::build_site(override = list(destination = tempdir()))
 #' }
 build_site <- function(...) {
