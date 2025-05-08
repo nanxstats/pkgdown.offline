@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Provides support for building 'pkgdown' websites without an internet connection. Works by bundling cached dependencies and implementing drop-in replacements for key 'pkgdown' functions. Enables package documentation websites to be built in environments where internet access is unavailable or restricted.
+Provides support for building 'pkgdown' websites without an internet connection. Works by bundling cached dependencies and implementing drop-in replacements for key 'pkgdown' functions. Enables package documentation websites to be built in environments where internet access is unavailable or restricted. For more details on generating 'pkgdown' websites, see Wickham et al. (2025) \doi{10.32614/CRAN.package.pkgdown}.
 }
 \seealso{
 Useful links:

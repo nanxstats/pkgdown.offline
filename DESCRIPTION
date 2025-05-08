@@ -28,6 +28,8 @@ Description: Provides support for building 'pkgdown' websites without an
     implementing drop-in replacements for key 'pkgdown' functions.
     Enables package documentation websites to be built in environments
     where internet access is unavailable or restricted.
+    For more details on generating 'pkgdown' websites, see
+    Wickham et al. (2025) <doi:10.32614/CRAN.package.pkgdown>.
 License: MIT + file LICENSE
 URL: https://nanx.me/pkgdown.offline/, https://github.com/nanxstats/pkgdown.offline
 BugReports: https://github.com/nanxstats/pkgdown.offline/issues
