@@ -2,6 +2,8 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/nanxstats/pkgdown.offline/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nanxstats/pkgdown.offline/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/pkgdown.offline)](https://cran.r-project.org/package=pkgdown.offline)
+[![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/pkgdown.offline)](https://cran.r-project.org/package=pkgdown.offline)
 <!-- badges: end -->
 
 pkgdown.offline provides support for offline builds of pkgdown websites,
