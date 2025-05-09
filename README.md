@@ -16,7 +16,13 @@ or CI/CD pipelines without internet access.
 
 ## Installation
 
-You can install the development version of pkgdown.offline from GitHub with:
+You can install pkgdown.offline from CRAN:
+
+``` r
+install.packages("pkgdown.offline")
+```
+
+Or try the development version from GitHub:
 
 ``` r
 # install.packages("remotes")
