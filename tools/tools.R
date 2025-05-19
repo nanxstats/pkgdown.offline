@@ -25,7 +25,7 @@ update_cache <- function(version, destdir = tempdir()) {
     cache_deps(pkg)
   }
 
-  if (version %in% c("2.1.2")) {
+  if (version %in% c("2.1.2", "2.1.3")) {
     pkg <- list()
     cache_deps(pkg)
   }

@@ -36,6 +36,9 @@ build_site <- function(...) {
     "v2.1.2" = {
       build_site_offline_1(...)
     },
+    "v2.1.3" = {
+      build_site_offline_1(...)
+    },
     "future" = {
       message(
         "pkgdown.offline support for this new pkgdown version is unknown.\n",
@@ -65,6 +68,8 @@ get_version_category <- function(version) {
     return("v2.1.1")
   } else if (compare_version(version, "==", "2.1.2")) {
     return("v2.1.2")
+  } else if (compare_version(version, "==", "2.1.3")) {
+    return("v2.1.3")
   } else {
     return("future")
   }
