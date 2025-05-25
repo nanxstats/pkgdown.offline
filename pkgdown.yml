@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   pkgdown.offline: pkgdown.offline.html
   update: update.html
-last_built: 2025-05-25T21:23Z
+last_built: 2025-05-25T22:16Z
 urls:
   reference: https://nanx.me/pkgdown.offline/reference
   article: https://nanx.me/pkgdown.offline/articles
