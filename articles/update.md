@@ -1,0 +1,72 @@
+# Update pkgdown.offline
+
+**This vignette is intended for pkgdown.offline developers only.**
+
+## How it works
+
+pkgdown.offline retrieves the cached frontend dependencies from each
+pkgdown version (\>= 2.1.0) and bundle them in the package. The cache is
+then used by the functions like
+[`pkgdown.offline::init_site()`](https://nanx.me/pkgdown.offline/reference/init_site.md)
+and
+[`pkgdown.offline::build_site()`](https://nanx.me/pkgdown.offline/reference/build_site.md)
+to support offline build workflows.
+
+Every time a new pkgdown version is released on CRAN, the new version
+support should be verified and potentially updated by the
+pkgdown.offline developer. pkgdown.offline also optimizes its package
+size by deduplicating these cache files across different pkgdown
+versions.
+
+## Retrieve raw pkgdown external dependencies
+
+Clone the repository. Open the project. Source the developer maintenance
+script:
+
+``` r
+source("tools/tools.R")
+```
+
+Retrieve the raw pkgdown external dependencies cache for all supported
+pkgdown versions. For example:
+
+``` r
+path_cache <- file.path(tempdir(), "pkgdown.offline")
+update_cache("2.1.0", destdir = path_cache)
+update_cache("2.1.1", destdir = path_cache)
+update_cache("2.1.2", destdir = path_cache)
+update_cache("2.1.3", destdir = path_cache)
+update_cache("2.2.0", destdir = path_cache)
+```
+
+## Create minified cache
+
+Create a minified cache in pkgdown.offline:
+
+``` r
+minify_cache(path_cache)
+```
+
+## Update offline build logic
+
+Now the package contains the minified cache with deduplicated files in
+`inst/cache/`. Commit and push.
+
+Certain internet-skipping logic in
+[`pkgdown.offline::build_site()`](https://nanx.me/pkgdown.offline/reference/build_site.md)
+and relevant functions might need adjustments.
+
+## Using the bundled cache
+
+When
+[`pkgdown.offline::init_site()`](https://nanx.me/pkgdown.offline/reference/init_site.md)
+or
+[`pkgdown.offline::build_site()`](https://nanx.me/pkgdown.offline/reference/build_site.md)
+is called to initialize or build site offline, the `copy_to_cache()`
+function will use `restore_cache()` to restore the cache into their
+original structure to the regular pkgdown cache location that individual
+pkgdown versions expect.
+
+You can run the manual tests under `tests/manual/` to verify if
+everything works. Note that the package should be in the installed state
+for `inst/cache/` to work.
