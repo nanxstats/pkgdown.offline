@@ -1,6 +1,6 @@
 Package: pkgdown.offline
 Title: Build 'pkgdown' Websites Offline
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-0250-5673")),
@@ -43,4 +43,4 @@ Suggests:
 VignetteBuilder: knitr
 Config/testthat/edition: 3
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
