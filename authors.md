@@ -36,7 +36,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/nanxstats/pkgdown.offline/blob/v0.1.2/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/nanxstats/pkgdown.offline/blob/main/DESCRIPTION)
 
 Xiao N, Blischak J (2025). *pkgdown.offline: Build 'pkgdown' Websites
 Offline*. R package version 0.1.2, <https://nanx.me/pkgdown.offline/>.
