@@ -7,6 +7,13 @@
 - Adds support for pkgdown version 2.2.1
   ([\#37](https://github.com/nanxstats/pkgdown.offline/issues/37)).
 
+### Tooling
+
+- Qualify the namespace for
+  [`install.packages()`](https://rdrr.io/r/utils/install.packages.html)
+  in developer tooling to bypass possible RStudio hooks
+  ([\#35](https://github.com/nanxstats/pkgdown.offline/issues/35)).
+
 ## pkgdown.offline 0.1.2
 
 CRAN release: 2025-11-08
