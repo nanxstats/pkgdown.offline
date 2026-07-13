@@ -4,6 +4,11 @@
 
 - Adds support for pkgdown version 2.2.1 (#37).
 
+## Tooling
+
+- Qualify the namespace for `install.packages()` in developer tooling to
+  bypass possible RStudio hooks (#35).
+
 # pkgdown.offline 0.1.2
 
 ## pkgdown version support
