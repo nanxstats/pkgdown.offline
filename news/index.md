@@ -2,6 +2,8 @@
 
 ## pkgdown.offline 0.1.3
 
+CRAN release: 2026-07-13
+
 ### pkgdown version support
 
 - Adds support for pkgdown version 2.2.1
