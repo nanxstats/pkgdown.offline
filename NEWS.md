@@ -1,3 +1,9 @@
+# pkgdown.offline 0.1.3
+
+## pkgdown version support
+
+- Adds support for pkgdown version 2.2.1 (#37).
+
 # pkgdown.offline 0.1.2
 
 ## pkgdown version support
