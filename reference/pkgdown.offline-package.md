@@ -26,6 +26,9 @@ Useful links:
 
 Authors:
 
+- Nan Xiao <me@nanx.me> ([ORCID](https://orcid.org/0000-0002-0250-5673))
+  \[copyright holder\]
+
 - John Blischak ([ORCID](https://orcid.org/0000-0003-2634-9879))
 
 Other contributors:

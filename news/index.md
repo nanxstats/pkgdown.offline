@@ -1,5 +1,12 @@
 # Changelog
 
+## pkgdown.offline 0.1.3
+
+### pkgdown version support
+
+- Adds support for pkgdown version 2.2.1
+  ([\#37](https://github.com/nanxstats/pkgdown.offline/issues/37)).
+
 ## pkgdown.offline 0.1.2
 
 CRAN release: 2025-11-08
