@@ -24,6 +24,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Nan Xiao \email{me@nanx.me} (\href{https://orcid.org/0000-0002-0250-5673}{ORCID}) [copyright holder]
   \item John Blischak (\href{https://orcid.org/0000-0003-2634-9879}{ORCID})
 }
 
