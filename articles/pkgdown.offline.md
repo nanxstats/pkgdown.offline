@@ -12,18 +12,21 @@ To test the offline build workflow, first clear the pkgdown external
 frontend dependencies cache that might exist in your environment:
 
 ``` r
+
 pkgdown.offline::clear_cache()
 ```
 
 Create a new package. For example:
 
 ``` r
+
 usethis::create_package(file.path(tempdir(), "pkg"))
 ```
 
 **Switch off internet connection**. In the new project, run:
 
 ``` r
+
 usethis::use_pkgdown()
 pkgdown.offline::build_site()
 ```

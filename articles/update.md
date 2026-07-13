@@ -24,6 +24,7 @@ Clone the repository. Open the project. Source the developer maintenance
 script:
 
 ``` r
+
 source("tools/tools.R")
 ```
 
@@ -31,6 +32,7 @@ Retrieve the raw pkgdown external dependencies cache for all supported
 pkgdown versions. For example:
 
 ``` r
+
 path_cache <- file.path(tempdir(), "pkgdown.offline")
 update_cache("2.1.0", destdir = path_cache)
 update_cache("2.1.1", destdir = path_cache)
@@ -44,6 +46,7 @@ update_cache("2.2.0", destdir = path_cache)
 Create a minified cache in pkgdown.offline:
 
 ``` r
+
 minify_cache(path_cache)
 ```
 

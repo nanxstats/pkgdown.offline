@@ -38,13 +38,13 @@
 Source:
 [`DESCRIPTION`](https://github.com/nanxstats/pkgdown.offline/blob/main/DESCRIPTION)
 
-Xiao N, Blischak J (2025). *pkgdown.offline: Build 'pkgdown' Websites
+Xiao N, Blischak J (2026). *pkgdown.offline: Build 'pkgdown' Websites
 Offline*. R package version 0.1.2, <https://nanx.me/pkgdown.offline/>.
 
     @Manual{,
       title = {pkgdown.offline: Build 'pkgdown' Websites Offline},
       author = {Nan Xiao and John Blischak},
-      year = {2025},
+      year = {2026},
       note = {R package version 0.1.2},
       url = {https://nanx.me/pkgdown.offline/},
     }

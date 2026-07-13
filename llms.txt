@@ -13,12 +13,14 @@ CI/CD pipelines without internet access.
 You can install pkgdown.offline from CRAN:
 
 ``` r
+
 install.packages("pkgdown.offline")
 ```
 
 Or try the development version from GitHub:
 
 ``` r
+
 # install.packages("remotes")
 remotes::install_github("nanxstats/pkgdown.offline")
 ```
